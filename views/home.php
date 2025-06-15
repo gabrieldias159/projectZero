@@ -12,9 +12,9 @@
 <div class="container mt-4">
     <h1 class="mb-4">Bem-vindo ao Gestor de Gabinete Parlamentar</h1>
     <div class="mb-3">
-        <a href="users" class="btn btn-primary mr-2"><i class="bi bi-people"></i> Gerenciar Usuários</a>
-        <a href="processos" class="btn btn-success mr-2"><i class="bi bi-folder2-open"></i> Gerenciar Processos</a>
-        <a href="#" class="btn btn-info"><i class="bi bi-bar-chart"></i> Dashboard</a>
+        <a href="users" class="btn btn-primary mr-2"><i class="bi bi-people"></i> Usuários</a>
+        <a href="processos" class="btn btn-success mr-2"><i class="bi bi-folder2-open"></i> Processos</a>
+        <a href="login" class="btn btn-info"><i class="bi bi-box-arrow-in-right"></i> Login</a>
     </div>
     <div class="row">
         <div class="col-md-4">

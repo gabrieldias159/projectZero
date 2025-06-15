@@ -17,10 +17,7 @@
                     <h4 class="mb-0"><i class="bi bi-person-circle"></i> Acesso ao Sistema</h4>
                 </div>
                 <div class="card-body">
-                    <?php if(isset($error) && $error): ?>
-                        <div class="alert alert-danger">Usuário ou senha inválidos.</div>
-                    <?php endif; ?>
-                    <form method="POST" action="login">
+                    <form method="POST" action="#">
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control" id="email" name="email" required autofocus>
@@ -37,7 +34,5 @@
     </div>
 </div>
 <?php include __DIR__.'/partials/footer.php'; ?>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-$baseUrl = '/beta/projectZero/public/'; // ajuste conforme necessário
+$baseUrl = '/beta/projectZero/public/';
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
