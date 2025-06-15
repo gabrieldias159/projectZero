@@ -20,7 +20,7 @@
                     <?php if(isset($error) && $error): ?>
                         <div class="alert alert-danger">Usuário ou senha inválidos.</div>
                     <?php endif; ?>
-                    <form method="POST" action="/login.php">
+                    <form method="POST" action="login">
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
                             <input type="email" class="form-control" id="email" name="email" required autofocus>
