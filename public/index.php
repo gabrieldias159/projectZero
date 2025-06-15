@@ -6,40 +6,26 @@ require_once __DIR__ . '/../src/app.php';
 session_start();
 
 require_once __DIR__ . '/../config/config.php';
-require_once __DIR__ . '/../controllers/AuthController.php';
-require_once __DIR__ . '/../controllers/UserController.php';
-require_once __DIR__ . '/../controllers/ProcessController.php';
 
-$base = '/beta/projectZero/public'; // ajuste conforme o subdiretório do seu servidor
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$method = $_SERVER['REQUEST_METHOD'];
+$base = '/beta/projectZero/public';
+$route = substr($uri, strlen($base));
 
-// Remove o base path para facilitar o roteamento
-if (strpos($uri, $base) === 0) {
-    $uri = substr($uri, strlen($base));
-    if ($uri === '') $uri = '/';
-}
-
-switch (true) {
-    case $uri === '/' && $method === 'GET':
-        require __DIR__ . '/../views/home.php';
+switch ($route) {
+    case '/':
+    case '':
+        require_once __DIR__ . '/../app/Controllers/HomeController.php';
+        (new HomeController())->index();
         break;
-    case $uri === '/login' && $method === 'GET':
-        require __DIR__ . '/../views/login.php';
+    case '/login':
+        require_once __DIR__ . '/../app/Controllers/LoginController.php';
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            (new LoginController())->auth();
+        } else {
+            (new LoginController())->index();
+        }
         break;
-    case $uri === '/login' && $method === 'POST':
-        (new AuthController)->login();
-        break;
-    case $uri === '/logout' && $method === 'POST':
-        (new AuthController)->logout();
-        break;
-    case $uri === '/users' && $method === 'GET':
-        (new UserController)->index();
-        break;
-    case $uri === '/processos' && $method === 'GET':
-        (new ProcessController)->index();
-        break;
-    // ...adicione mais rotas conforme necessário...
     default:
-        require __DIR__ . '/../views/404.php';
+        http_response_code(404);
+        echo "Rota não encontrada.";
 }
