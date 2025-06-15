@@ -1,18 +1,18 @@
 <?php
-$baseUrl = '/'; // ajuste conforme necessário
+$baseUrl = '/beta/projectZero/public/'; // ajuste conforme necessário
 ?>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?= $baseUrl ?>index.php">Sistema</a>
+    <a class="navbar-brand" href="<?= $baseUrl ?>">Sistema</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>index.php">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>users.php">Usuários</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>processos.php">Processos</a></li>
-        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>login.php">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>users">Usuários</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>processos">Processos</a></li>
+        <li class="nav-item"><a class="nav-link" href="<?= $baseUrl ?>login">Login</a></li>
       </ul>
     </div>
   </div>

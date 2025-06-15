@@ -1,4 +1,3 @@
 <?php
 // Arquivo principal da aplicação
-
-echo 'Olá, mundo!';
+// Removido qualquer saída para não interferir nas views
