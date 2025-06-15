@@ -1,10 +1,7 @@
 <?php
 // Ponto de entrada da aplicação
 require_once __DIR__ . '/../src/app.php';
-
-// Ponto de entrada: roteamento básico
 session_start();
-
 require_once __DIR__ . '/../config/config.php';
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -25,7 +22,13 @@ switch ($route) {
             (new LoginController())->index();
         }
         break;
+    case '/users':
+        require_once __DIR__ . '/../views/users.php';
+        break;
+    case '/processos':
+        require_once __DIR__ . '/../views/processos.php';
+        break;
     default:
         http_response_code(404);
-        echo "Rota não encontrada.";
+        require_once __DIR__ . '/../views/404.php';
 }
